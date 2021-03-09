@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simple_dice/OneRollingDice.dart';
+import 'package:simple_dice/TwoRollingDice.dart';
 import 'constants.dart';
 import 'dart:math' as math;
 
@@ -31,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                       width: 4,
                     ),
                     borderRadius: BorderRadius.circular(
-                      10,
+                      13,
                     ),
                   ),
                   child: Padding(
@@ -88,6 +90,22 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         dropDownValue = newValue;
                       });
+
+                      if (dropDownValue == 2) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TwoRollingDice(),
+                          ),
+                        );
+                      } else if (dropDownValue == 1) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OneRollingDice(),
+                          ),
+                        );
+                      }
                     },
                     items:
                         <int>[1, 2, 3].map<DropdownMenuItem<int>>((int value) {
