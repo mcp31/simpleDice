@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_dice/OneRollingDice.dart';
+import 'package:simple_dice/ThreeRollingDice.dart';
 import 'package:simple_dice/TwoRollingDice.dart';
 import 'constants.dart';
 import 'dart:math' as math;
@@ -103,6 +104,13 @@ class _HomePageState extends State<HomePage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => OneRollingDice(),
+                          ),
+                        );
+                      } else if (dropDownValue == 3) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ThreeRollingDice(),
                           ),
                         );
                       }
