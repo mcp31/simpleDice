@@ -4,4 +4,32 @@ import 'package:flutter/material.dart';
 const kYellow = Color(0xffF4ECCC);
 const kDarkBlue = Color(0xff283547);
 const kLightBlue = Color(0xff7093B2);
-const kAccentYellow = Color(0xffFFFBEF);
+const kLightYellow = Color(0xffFFFBEF);
+
+const kTitleTextStyle = TextStyle(
+  fontFamily: "Poppins",
+  fontSize: 52,
+  fontWeight: FontWeight.bold,
+  color: kDarkBlue,
+);
+
+const kSubTitleTextStyle = TextStyle(
+  fontFamily: "Poppins",
+  fontSize: 28,
+  fontWeight: FontWeight.bold,
+  color: kLightBlue,
+);
+
+const kQuestionTextStyle = TextStyle(
+  fontFamily: "Poppins",
+  fontSize: 24,
+  fontWeight: FontWeight.w500,
+  color: kLightBlue,
+);
+
+const kDropDownItemTextStyle = TextStyle(
+  fontFamily: "Poppins",
+  fontSize: 24,
+  fontWeight: FontWeight.bold,
+  color: kDarkBlue,
+);
