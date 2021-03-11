@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:simple_dice/ExtraPages/OneRollingDice.dart';
+import '../constants.dart';
 import 'dart:math' as math;
 import 'dart:math';
 
-const kDiceDimension = 100.0;
-
-class ThreeRollingDice extends StatefulWidget {
+class OneRollingDice extends StatefulWidget {
   @override
-  _ThreeRollingDiceState createState() => _ThreeRollingDiceState();
+  _OneRollingDiceState createState() => _OneRollingDiceState();
 }
 
-class _ThreeRollingDiceState extends State<ThreeRollingDice>
+class _OneRollingDiceState extends State<OneRollingDice>
     with SingleTickerProviderStateMixin {
-  int leftDiceNumber = 1;
-  int middleDiceNumber = 3;
-  int rightDiceNumber = 2;
+  int diceNumber = 1;
 
   double diceBottomPadding = 0.0;
 
   void rollDice() {
     setState(() {
       diceBottomPadding = 100.0;
-      leftDiceNumber = Random().nextInt(6) + 1;
-      rightDiceNumber = Random().nextInt(6) + 1;
-      middleDiceNumber = Random().nextInt(6) + 1;
+      diceNumber = Random().nextInt(6) + 1;
     });
   }
 
@@ -62,8 +57,8 @@ class _ThreeRollingDiceState extends State<ThreeRollingDice>
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Container(
-                      height: kDiceDimension,
-                      width: kDiceDimension,
+                      height: 118.6,
+                      width: 118.6,
                       decoration: BoxDecoration(
                         color: kLightYellow,
                         border: Border.all(
@@ -79,55 +74,7 @@ class _ThreeRollingDiceState extends State<ThreeRollingDice>
                         child: Transform.rotate(
                           angle: -math.pi / 4,
                           child: Image.asset(
-                            "images/$leftDiceNumber.png", //TODO: Randomize two numbers here
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: kDiceDimension,
-                      width: kDiceDimension,
-                      decoration: BoxDecoration(
-                        color: kLightYellow,
-                        border: Border.all(
-                          color: kLightBlue,
-                          width: 4,
-                        ),
-                        borderRadius: BorderRadius.circular(
-                          13,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Transform.rotate(
-                          angle: -math.pi / 4,
-                          child: Image.asset(
-                            "images/$middleDiceNumber.png", //TODO: Randomize two numbers here
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: kDiceDimension,
-                      width: kDiceDimension,
-                      decoration: BoxDecoration(
-                        color: kLightYellow,
-                        border: Border.all(
-                          color: kLightBlue,
-                          width: 4,
-                        ),
-                        borderRadius: BorderRadius.circular(
-                          13,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Transform.rotate(
-                          angle: -math.pi / 4,
-                          child: Image.asset(
-                            "images/$rightDiceNumber.png",
+                            "images/$diceNumber.png", //TODO: Randomize two numbers here
                             fit: BoxFit.contain,
                           ),
                         ),
