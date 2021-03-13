@@ -17,19 +17,6 @@ class TwoRollingDice extends StatefulWidget {
 
 class _TwoRollingDiceState extends State<TwoRollingDice>
     with SingleTickerProviderStateMixin {
-  int leftDiceNumber = 1;
-  int rightDiceNumber = 2;
-
-  double diceBottomPadding = 0.0;
-
-  void rollDice() {
-    setState(() {
-      diceBottomPadding = 100.0;
-      leftDiceNumber = Random().nextInt(6) + 1;
-      rightDiceNumber = Random().nextInt(6) + 1;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
